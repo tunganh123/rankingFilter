@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="faceView" customModule="rankingFilter" customModuleProvider="target">
+            <connections>
+                <outlet property="img" destination="RyM-Ae-4hW" id="0Gv-fH-HIU"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="237" height="197"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RyM-Ae-4hW">
+                    <rect key="frame" x="0.0" y="0.0" width="237" height="197"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="RyM-Ae-4hW" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="D2F-0V-l5e"/>
+                <constraint firstAttribute="trailing" secondItem="RyM-Ae-4hW" secondAttribute="trailing" id="E8m-mN-LO4"/>
+                <constraint firstItem="RyM-Ae-4hW" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Jia-m2-kLk"/>
+                <constraint firstAttribute="bottom" secondItem="RyM-Ae-4hW" secondAttribute="bottom" id="RZP-WO-cWF"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-141.22137404580153" y="-210.21126760563382"/>
+        </view>
+    </objects>
+</document>

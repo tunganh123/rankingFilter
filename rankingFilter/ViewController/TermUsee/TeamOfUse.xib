@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TeamOfUse" customModule="Ar_draw" customModuleProvider="target">
+            <connections>
+                <outlet property="tv" destination="8oF-oF-ej2" id="OvH-kh-Skq"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8oF-oF-ej2">
+                    <rect key="frame" x="20" y="59" width="353" height="793"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <string key="text">Terms of Use
+If you continue to use this application , you are agreeing to comply with and be bound by the following terms and conditions of use, which together with our privacy policy govern app relationship with you in relation to this application.
+If you disagree with any part of these terms and conditions, please do not use our application.
+This is a security service and we do not guarantee to give you 100% security. It was designed to protect your conversations and having them backed up on encrypted cloud platform.
+You accept that we do not guarantee to give you exact results by downloading and upgrading your membership. Keep in mind that this app does not add a passcode to the original applications, only the imported conversations of your choice.
+Links To Other Web Sites
+We have no control over, and assumes no responsibility for, the content, privacy policies, or practices of any third party web sites or services.
+You further acknowledge and agree that CEM Software. shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with use of or reliance on any such content, goods or services available on or through any such web sites or services.
+We strongly advise you to read the terms and conditions and privacy policies of any third party web sites or services that you visit.
+Law
+These Terms constitute the entire agreement between us regarding our Service, and supersede and replace any prior agreements we might have between us regarding the Service.
+Changes
+We reserve the right, at our sole discretion, to modify or replace these Terms at any time. Any changes to the Terms will be effective immediately.
+By continuing to access or use our Service after those revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, please stop using the Service.
+Warranty Disclaimer
+This is an unofficial product. Any product names, logos, brands, and other trademarks or images featured or referred to within this app are the property of their respective trademark holders.
+Any of these trademark holders are not affiliated This is app, our products, or with us. They do not sponsor or endorse this app or any of our online products.
+Neither we nor any third parties provide any warranty or guarantee as to the accuracy, timeliness, performance, completeness or suitability of the information and materials found or offered in this app for any particular purpose.
+Your use of any information or materials in this app is entirely at your own risk, for which we shall not be liable.
+It shall be your own responsibility to ensure that any products, services or information available through this app meet your specific requirements.
+Free Trial
+CEM Software provides a FREE TRIAL period during which you can use all features of the service for a limited period of time. You can manage or cancel the trial subscription through your App Store account.
+Payment
+CEM Software services are provided through the APP STORE on a paid subscription basis. CEM Software rates for services are listed in the App and on the App Store.
+CEM Software reserves the right to modify its rates at any time and/or to offer special promotions. CEM Software does not issue refunds for services.
+CEM Software does not send invoices to its customers.
+Instead, you have confidential access to your account balance information through the App Store.
+If you have a billing dispute, you must contact the App Store to seek a remedy.
+Contact us
+If you have questions regarding this privacy policy, you may email info@cemsoftware.com 8th floor, Sannam Building, 78 Duy Tan Street, Dich Vuong Hau Ward, Cau Giay District, Hanoi City, Vietnam</string>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="8oF-oF-ej2" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Uhe-Gd-77B"/>
+                <constraint firstAttribute="bottom" secondItem="8oF-oF-ej2" secondAttribute="bottom" id="aR6-ZO-IH8"/>
+                <constraint firstItem="8oF-oF-ej2" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="sh7-KY-bdA"/>
+                <constraint firstItem="8oF-oF-ej2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="wkJ-q3-RIJ"/>
+            </constraints>
+            <point key="canvasLocation" x="28" y="21"/>
+        </view>
+    </objects>
+</document>

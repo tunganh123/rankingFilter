@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingRecord" customModule="rankingFilter" customModuleProvider="target">
+            <connections>
+                <outlet property="btnRecord" destination="JS0-Wo-nOi" id="pWA-Bm-Hcz"/>
+                <outletCollection property="btnTimes" destination="KHf-VH-Seg" collectionClass="NSMutableArray" id="lDq-wl-g6E"/>
+                <outletCollection property="btnTimes" destination="Kyt-ND-jTs" collectionClass="NSMutableArray" id="TUw-65-4Hk"/>
+                <outletCollection property="btnTimes" destination="bov-fD-SdI" collectionClass="NSMutableArray" id="2vp-nE-aPZ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="350" height="153"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="vwM-Oy-JRk">
+                    <rect key="frame" x="65" y="10" width="220" height="40"/>
+                    <subviews>
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KHf-VH-Seg">
+                            <rect key="frame" x="0.0" y="0.0" width="60" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="3vk-z4-ACd"/>
+                                <constraint firstAttribute="width" constant="60" id="Idb-31-dm5"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="15s"/>
+                            <connections>
+                                <action selector="timeTap:" destination="-1" eventType="touchUpInside" id="vsN-Y9-F1V"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kyt-ND-jTs">
+                            <rect key="frame" x="80" y="0.0" width="60" height="40"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="30s"/>
+                            <connections>
+                                <action selector="timeTap:" destination="-1" eventType="touchUpInside" id="M7L-yK-dLi"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bov-fD-SdI">
+                            <rect key="frame" x="160" y="0.0" width="60" height="40"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="45s"/>
+                            <connections>
+                                <action selector="timeTap:" destination="-1" eventType="touchUpInside" id="Svq-1b-cYL"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JS0-Wo-nOi">
+                    <rect key="frame" x="140" y="65" width="70" height="70"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="70" id="XMG-cY-WO0"/>
+                        <constraint firstAttribute="width" constant="70" id="ybd-0h-Ogf"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" backgroundImage="ic_record_start"/>
+                    <connections>
+                        <action selector="clickRecord:" destination="-1" eventType="touchUpInside" id="RuP-z7-XRF"/>
+                    </connections>
+                </button>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Fhl-bY-mgY">
+                    <rect key="frame" x="305" y="65" width="30" height="55.333333333333343"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gnh-1X-ZaH">
+                            <rect key="frame" x="0.0" y="0.99999999999999822" width="30" height="28.666666666666664"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="30" id="gLC-xd-nxE"/>
+                                <constraint firstAttribute="height" constant="30" id="iX8-lT-IwD"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" backgroundImage="circle" catalog="system"/>
+                            <connections>
+                                <action selector="clickFlip:" destination="-1" eventType="touchUpInside" id="lbY-zh-zFs"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flip" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="03b-OI-HH8">
+                            <rect key="frame" x="0.0" y="35" width="30" height="20.333333333333329"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Fhl-bY-mgY" firstAttribute="top" secondItem="JS0-Wo-nOi" secondAttribute="top" id="BnG-mD-erk"/>
+                <constraint firstItem="vwM-Oy-JRk" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="FVz-3t-XDd"/>
+                <constraint firstItem="JS0-Wo-nOi" firstAttribute="top" secondItem="vwM-Oy-JRk" secondAttribute="bottom" constant="15" id="O86-ga-qGN"/>
+                <constraint firstAttribute="trailing" secondItem="Fhl-bY-mgY" secondAttribute="trailing" constant="15" id="Rdm-aS-eVR"/>
+                <constraint firstItem="vwM-Oy-JRk" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="qvf-bQ-xvL"/>
+                <constraint firstItem="JS0-Wo-nOi" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="v9S-wD-j0h"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="10.687022900763358" y="-185.56338028169014"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="circle" catalog="system" width="128" height="123"/>
+        <image name="ic_record_start" width="60" height="60"/>
+    </resources>
+</document>
