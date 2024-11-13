@@ -6,17 +6,27 @@
 //
 
 import Foundation
+import LouisPod
 import UIKit
 
 extension ViewRecord {
     @IBAction func clickFlash(_ sender: Any) {
-        isFlashOn.toggle()
-        toggleBrightness()
+        //
+        print("tap Flash")
+        cameraLayer.mergeVideo()
+        //  isStartRecord = true
+
+//        isFlashOn.toggle()
+//        toggleBrightness()
     }
 
-    @IBAction func clickTimer(_ sender: Any) {}
+    @IBAction func clickTimer(_ sender: Any) {
+        print("tap Flash")
+    }
 
-    @IBAction func clickMusic(_ sender: Any) {}
+    @IBAction func clickMusic(_ sender: Any) {
+        print("tap Music")
+    }
 
     @IBAction func btnsClick(_ sender: UIButton) {
         if !faceViewref.checkTimerRun {

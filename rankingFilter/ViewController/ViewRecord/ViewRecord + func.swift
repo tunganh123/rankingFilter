@@ -32,8 +32,8 @@ extension ViewRecord {
             }
 //            cameraLayer.configUI(position: cameraLayer.currentCameraPosition == .front ? .back : .front)
 
-            setupFaceDetection()
-            startFaceDetection() // Gọi startFaceDetection để bắt đầu nhận diện khuôn mặt
+//            setupFaceDetection()
+//            startFaceDetection() // Gọi startFaceDetection để bắt đầu nhận diện khuôn mặt
             setupButtonInSeparateWindow()
         }
         restVC.view.addSubview(settingRecord)
@@ -73,34 +73,16 @@ extension ViewRecord {
             isStartRecord = true
             settingRecord.btnRecord.setBackgroundImage(UIImage(named: "ic_record_pause"), for: .normal)
             // Bắt đầu record
-            cameraLayer.startRecording { result in
-                after(interval: 0) {
-                    switch result {
-                    case .success():
-                        print("Play recording")
-                    case .failure(let err):
-                        print("err", err)
-                    }
-                }
-            }
+            cameraLayer.startRecording()
         } else {
             isPauseRecord.toggle()
             if isPauseRecord {
                 // Tạm dừng
-                cameraLayer.pauseRecording()
+                cameraLayer.stopRecording()
                 print("Pause recording")
             } else {
                 // Resume
-                cameraLayer.startRecording { result in
-                    after(interval: 0) {
-                        switch result {
-                        case .success():
-                            print("Resume recording")
-                        case .failure(let err):
-                            print("err", err)
-                        }
-                    }
-                }
+                cameraLayer.startRecording()
             }
         }
     }

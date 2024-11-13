@@ -17,31 +17,17 @@ extension ViewRecord {
             guard let self = self else {
                 return
             }
-            Task { [weak self] in
-                guard let self = self else {
-                    return
-                }
+            setupRecord()
 
-                try await setupRecord()
-
-                after(interval: 1) { [weak self] in
-                    guard let self = self else {
-                        return
-                    }
-                    cameraLayer?.setupVideoPreviewLayer(containerView: self.cameraView)
-                    setupFaceDetection()
-                    startFaceDetection() // Gọi startFaceDetection để bắt đầu nhận diện khuôn mặt
-                    setupButtonInSeparateWindow()
-                }
-            }
+            setupFaceDetection()
+            startFaceDetection() // Gọi startFaceDetection để bắt đầu nhận diện khuôn mặt
+            setupButtonInSeparateWindow()
         }
     }
 
-    func setupRecord() async throws {
-        cameraLayer = Recorder(delegate: self)
-        try await cameraLayer?.setupSession(previewView: cameraView,
-                                            isEnableMicrophone: true,
-                                            isUsingFrontCamera: true)
+    func setupRecord() {
+        cameraLayer = CameraView(frame: cameraView.bounds)
+        cameraView.addSubview(cameraLayer)
     }
 
     // Thiết lập yêu cầu nhận diện khuôn mặt

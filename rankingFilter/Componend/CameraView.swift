@@ -1,4 +1,5 @@
 import AVFoundation
+import DKImagePickerController
 import LouisPod
 import ReplayKit
 import UIKit
@@ -12,7 +13,9 @@ class CameraView: UIView {
     var videoInput: AVCaptureDeviceInput!
     var isFlash = false
     var handleFailCamera: (() -> Void)?
-
+    var screenRecorder: RPScreenRecorder!
+    var arrVideos: [AVAsset] = []
+    var count = 0
     override init(frame: CGRect) {
         super.init(frame: frame)
         configUI()
@@ -27,7 +30,8 @@ class CameraView: UIView {
         backgroundColor = .white
         captureSession = AVCaptureSession()
         captureSession.sessionPreset = .iFrame960x540
-
+        screenRecorder = RPScreenRecorder.shared()
+        screenRecorder.isMicrophoneEnabled = true // Bật mic nếu muốn ghi lại âm thanh
         guard let rearCamera = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .front) else {
             guard let parent = UIApplication.topViewController() else { return }
             parent.showToast(message: "Your Camera rear crash.")
@@ -61,9 +65,6 @@ class CameraView: UIView {
     }
 
     func startRecording() {
-        let screenRecorder = RPScreenRecorder.shared()
-        screenRecorder.isMicrophoneEnabled = true // Bật mic nếu muốn ghi lại âm thanh
-
         screenRecorder.startRecording { error in
             if let error = error {
                 print("Start recording failed with error: \(error.localizedDescription)")
@@ -74,24 +75,85 @@ class CameraView: UIView {
     }
 
     func stopRecording() {
+        count += 1
         let screenRecorder = RPScreenRecorder.shared()
         let outputDirectory = FileManager.default.temporaryDirectory
-        let outputURL = outputDirectory.appendingPathComponent("recordedVideo.mov")
-        // Xóa file gốc nếu có
+        let outputURL = outputDirectory.appendingPathComponent("recordedVideo\(count).mov")
+
+        // Delete existing file if necessary
         if FileManager.default.fileExists(atPath: outputURL.path) {
             do {
                 try FileManager.default.removeItem(at: outputURL)
-                print("Đã xóa video cũ tại \(outputURL.path)")
+                print("Deleted old video at \(outputURL.path)")
             } catch {
-                print("Không thể xóa video cũ: \(error.localizedDescription)")
+                print("Failed to delete old video: \(error.localizedDescription)")
             }
         }
+
         screenRecorder.stopRecording(withOutput: outputURL) { error in
             if let error = error {
-                print("Lỗi khi dừng quay: \(error.localizedDescription)")
+                print("Error stopping recording: \(error.localizedDescription)")
             } else {
-                print("Quá trình quay kết thúc và video đã được lưu tại \(outputURL.path)")
-                UISaveVideoAtPathToSavedPhotosAlbum(outputURL.path, nil, nil, nil)
+                let asset = AVAsset(url: outputURL)
+                let duration = asset.duration.seconds
+                let trimEnd = duration - 1.5 // Trim last second
+
+                if trimEnd > 0 {
+                    let trimmedURL = outputDirectory.appendingPathComponent("trimmedVideo\(self.count).mov")
+                    self.trimVideo(asset: asset, startTime: 0.0, endTime: trimEnd, outputURL: trimmedURL) { trimmedAsset in
+                        if let trimmedAsset = trimmedAsset {
+                            self.arrVideos.append(trimmedAsset)
+                            UISaveVideoAtPathToSavedPhotosAlbum(trimmedURL.path, nil, nil, nil)
+                            print("Recording finished and trimmed video saved at \(trimmedURL.path)")
+                        }
+                    }
+                } else {
+                    print("Video too short to trim")
+                }
+            }
+        }
+    }
+
+    // Helper function to trim video
+    func trimVideo(asset: AVAsset, startTime: Double, endTime: Double, outputURL: URL, completion: @escaping (AVAsset?) -> Void) {
+        let start = CMTime(seconds: startTime, preferredTimescale: 600)
+        let end = CMTime(seconds: endTime, preferredTimescale: 600)
+        let timeRange = CMTimeRange(start: start, end: end)
+
+        guard let exportSession = AVAssetExportSession(asset: asset, presetName: AVAssetExportPresetHighestQuality) else {
+            print("Export session could not be created")
+            completion(nil)
+            return
+        }
+
+        exportSession.outputURL = outputURL
+        exportSession.outputFileType = .mov
+        exportSession.timeRange = timeRange
+
+        exportSession.exportAsynchronously {
+            switch exportSession.status {
+            case .completed:
+                print("Video trimmed successfully")
+                completion(AVAsset(url: outputURL))
+            case .failed:
+                print("Trimming failed: \(String(describing: exportSession.error?.localizedDescription))")
+                completion(nil)
+            default:
+                completion(nil)
+            }
+        }
+    }
+
+    func mergeVideo() {
+        KVVideoManager.shared.merge(arrayVideos: arrVideos) { [weak self] outputURL, error in
+            guard let `self` = self else { return }
+            DispatchQueue.main.async {
+                if let error = error {
+                    print("Error:\(error.localizedDescription)")
+                } else if let url = outputURL {
+                    print("urlzzzzzz", url)
+                    UISaveVideoAtPathToSavedPhotosAlbum(url.path, nil, nil, nil)
+                }
             }
         }
     }

@@ -8,6 +8,7 @@
 import Foundation
 
 import AVFoundation
+import AVKit
 import LouisPod
 import ReplayKit
 import UIKit
@@ -160,7 +161,7 @@ extension Recorder {
     }
     
     func finishRecording() {
-        delegate?.recorderWillStartWriting()
+        //   delegate?.recorderWillStartWriting()
          
         stopRecordingSegment { [weak self] in
             guard let self = self else { return }
@@ -265,8 +266,23 @@ extension Recorder {
 // MARK: - Private Functions
 
 extension Recorder {
+    func previewVideo(url: URL) {
+        // Tạo AVPlayer từ URL video
+        let player = AVPlayer(url: url)
+        // Tạo AVPlayerViewController để hiển thị video
+        let playerViewController = AVPlayerViewController()
+        playerViewController.player = player
+        // Đưa AVPlayerViewController lên màn hình
+        UIApplication.topViewController()!.present(playerViewController, animated: true) {
+            // Khi video được hiển thị, tự động phát video
+            player.play()
+        }
+    }
+
     private func startNewRecordingSegment() {
         fileName = UUID().uuidString
+        print("videoUrl", videoUrl)
+
         segments.append(videoUrl)
         
         do {
@@ -324,6 +340,7 @@ extension Recorder {
             screenRecorder.stopCapture(handler: nil)
         }
         recordedTime.append(recordingSeconds)
+        print("recordedTime", recordedTime)
         guard let writer = assetWriter else {
             completion?()
             return
@@ -404,7 +421,10 @@ extension Recorder {
                 try? audioTrack?.insertTimeRange(CMTimeRangeMake(start: .zero, duration: asset.duration), of: audioAssetTrack, at: insertTime)
             }
             insertTime = CMTimeAdd(insertTime, asset.duration)
+            UISaveVideoAtPathToSavedPhotosAlbum(segment.path, nil, nil, nil)
         }
+       
+        return
         
         let outputURL = createOutputURL()
         

@@ -15,7 +15,7 @@ target 'rankingFilter' do
   pod 'Firebase/Database'
   pod 'Kingfisher', '~> 7.0'
   pod 'IQKeyboardManagerSwift'
-
+  pod 'DKImagePickerController’
 end
 post_install do |installer|
     installer.generated_projects.each do |project|

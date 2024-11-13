@@ -270,25 +270,25 @@
                             <rect key="frame" x="323" y="304.66666666666669" width="40" height="150"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qdv-14-gsS">
-                                    <rect key="frame" x="0.0" y="1" width="40" height="38.666666666666671"/>
+                                    <rect key="frame" x="0.0" y="1.6666666666666643" width="40" height="37"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="FUd-Qc-u5m"/>
                                         <constraint firstAttribute="width" constant="40" id="enT-sc-YNh"/>
                                     </constraints>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                    <state key="normal" backgroundImage="flashlight.off.circle.fill" catalog="system"/>
+                                    <state key="normal" backgroundImage="folder.fill" catalog="system"/>
                                     <connections>
                                         <action selector="clickFlash:" destination="-1" eventType="touchUpInside" id="Hl7-zU-1NT"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qah-G3-aBb">
-                                    <rect key="frame" x="0.0" y="56.000000000000007" width="40" height="38.666666666666664"/>
+                                    <rect key="frame" x="0.0" y="54.666666666666671" width="40" height="40.666666666666671"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="40" id="YRB-ut-cWn"/>
                                         <constraint firstAttribute="height" constant="40" id="iQR-fd-Gvd"/>
                                     </constraints>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                    <state key="normal" backgroundImage="timer.circle.fill" catalog="system"/>
+                                    <state key="normal" backgroundImage="timelapse" catalog="system"/>
                                     <connections>
                                         <action selector="clickTimer:" destination="-1" eventType="touchUpInside" id="BwA-uW-XMe"/>
                                     </connections>
@@ -333,9 +333,9 @@
         </view>
     </objects>
     <resources>
-        <image name="flashlight.off.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="folder.fill" catalog="system" width="128" height="96"/>
         <image name="music.mic.circle.fill" catalog="system" width="128" height="123"/>
-        <image name="timer.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="timelapse" catalog="system" width="128" height="124"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

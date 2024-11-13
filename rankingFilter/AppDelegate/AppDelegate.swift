@@ -5,19 +5,19 @@
 //  Created by TungAnh on 27/6/24.
 //
 import AdsMediationManager
-import FirebaseCore
+import AppsFlyerAdRevenue
+import AppsFlyerLib
+import AppTrackingTransparency
+import AVFoundation
 import FirebaseAnalytics
+import FirebaseCore
 import FirebaseCrashlytics
 import FirebaseMessaging
-import SwiftyStoreKit
-import FirebaseMessaging
-import Qonversion
-import AppsFlyerLib
-import AppsFlyerAdRevenue
-import AppTrackingTransparency
 import IQKeyboardManagerSwift
-import UIKit 
 import LouisPod
+import Qonversion
+import SwiftyStoreKit
+import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -26,6 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         UIApplication.shared.statusBarStyle = .lightContent
+        requestCameraAndMicrophoneAccess()
 
         configureAnalytic()
         configurePayment()
@@ -59,9 +60,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             EventManager.logEvent("open_first", params: ["TIME": Date()])
 
             UserDefaults.standard.set(Date().timeIntervalSince1970, forKey: "dateFirstApp")
-            
-         
-           
         }
     }
 
@@ -113,5 +111,25 @@ extension AppDelegate: AppsFlyerLibDelegate {
 extension AppDelegate {
     func configurePayment() {
         PaymentManager.shared.initPayment(productIds: KEY_INAPP_IDS, secretKey: KEY_INAPP_SECRET)
+    }
+}
+
+extension AppDelegate {
+    func requestCameraAndMicrophoneAccess() {
+        AVCaptureDevice.requestAccess(for: .video) { granted in
+            if granted {
+                print("Camera access granted.")
+            } else {
+                print("Camera access denied.")
+            }
+        }
+
+        AVAudioSession.sharedInstance().requestRecordPermission { granted in
+            if granted {
+                print("Microphone access granted.")
+            } else {
+                print("Microphone access denied.")
+            }
+        }
     }
 }

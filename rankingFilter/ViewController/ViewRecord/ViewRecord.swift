@@ -26,7 +26,7 @@ class ViewRecord: UIViewController {
     var settingRecord: SettingRecord!
 
     @IBOutlet var cameraView: UIView!
-    var cameraLayer: Recorder!
+    var cameraLayer: CameraView!
     // Flag record
     var isStartRecord: Bool = false
     var isPauseRecord: Bool = false {
@@ -42,7 +42,7 @@ class ViewRecord: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
+        ()
         // Do any additional setup after loading the view.
     }
 

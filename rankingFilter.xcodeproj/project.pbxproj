@@ -20,6 +20,15 @@
 		7D2CB3BD2CDDCDCC0084C35D /* ViewRecord + tap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2CB3BC2CDDCDCC0084C35D /* ViewRecord + tap.swift */; };
 		7D2CB3C02CDDEF1A0084C35D /* CameraView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D2CB3BE2CDDEF1A0084C35D /* CameraView.xib */; };
 		7D2CB3C12CDDEF1A0084C35D /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2CB3BF2CDDEF1A0084C35D /* CameraView.swift */; };
+		7D2E501A2CE4853D00740301 /* KVExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2E50172CE4853D00740301 /* KVExtensions.swift */; };
+		7D2E501B2CE4853D00740301 /* KVVideoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2E50182CE4853D00740301 /* KVVideoManager.swift */; };
+		7D2E50232CE4892C00740301 /* movie2.mov in Resources */ = {isa = PBXBuildFile; fileRef = 7D2E501C2CE4892B00740301 /* movie2.mov */; };
+		7D2E50242CE4892C00740301 /* landscape.MOV in Resources */ = {isa = PBXBuildFile; fileRef = 7D2E501D2CE4892B00740301 /* landscape.MOV */; };
+		7D2E50252CE4892C00740301 /* sample.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7D2E501E2CE4892B00740301 /* sample.mp3 */; };
+		7D2E50262CE4892C00740301 /* movie1.mov in Resources */ = {isa = PBXBuildFile; fileRef = 7D2E501F2CE4892B00740301 /* movie1.mov */; };
+		7D2E50272CE4892C00740301 /* black.mov in Resources */ = {isa = PBXBuildFile; fileRef = 7D2E50202CE4892C00740301 /* black.mov */; };
+		7D2E50282CE4892C00740301 /* portrait.MOV in Resources */ = {isa = PBXBuildFile; fileRef = 7D2E50212CE4892C00740301 /* portrait.MOV */; };
+		7D2E50292CE4892C00740301 /* silence.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7D2E50222CE4892C00740301 /* silence.mp3 */; };
 		7D4FD3092CE1AFFA000A2589 /* ViewRecord + func.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4FD3082CE1AFFA000A2589 /* ViewRecord + func.swift */; };
 		7D4FD30C2CE1B5D9000A2589 /* SettingRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4FD30B2CE1B5D9000A2589 /* SettingRecord.swift */; };
 		7D4FD30E2CE1B5E9000A2589 /* SettingRecord.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D4FD30D2CE1B5E9000A2589 /* SettingRecord.xib */; };
@@ -67,6 +76,15 @@
 		7D2CB3BC2CDDCDCC0084C35D /* ViewRecord + tap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewRecord + tap.swift"; sourceTree = "<group>"; };
 		7D2CB3BE2CDDEF1A0084C35D /* CameraView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CameraView.xib; sourceTree = "<group>"; };
 		7D2CB3BF2CDDEF1A0084C35D /* CameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		7D2E50172CE4853D00740301 /* KVExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVExtensions.swift; sourceTree = "<group>"; };
+		7D2E50182CE4853D00740301 /* KVVideoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVVideoManager.swift; sourceTree = "<group>"; };
+		7D2E501C2CE4892B00740301 /* movie2.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = movie2.mov; sourceTree = "<group>"; };
+		7D2E501D2CE4892B00740301 /* landscape.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = landscape.MOV; sourceTree = "<group>"; };
+		7D2E501E2CE4892B00740301 /* sample.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sample.mp3; sourceTree = "<group>"; };
+		7D2E501F2CE4892B00740301 /* movie1.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = movie1.mov; sourceTree = "<group>"; };
+		7D2E50202CE4892C00740301 /* black.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = black.mov; sourceTree = "<group>"; };
+		7D2E50212CE4892C00740301 /* portrait.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = portrait.MOV; sourceTree = "<group>"; };
+		7D2E50222CE4892C00740301 /* silence.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = silence.mp3; sourceTree = "<group>"; };
 		7D4FD3082CE1AFFA000A2589 /* ViewRecord + func.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewRecord + func.swift"; sourceTree = "<group>"; };
 		7D4FD30B2CE1B5D9000A2589 /* SettingRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingRecord.swift; sourceTree = "<group>"; };
 		7D4FD30D2CE1B5E9000A2589 /* SettingRecord.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingRecord.xib; sourceTree = "<group>"; };
@@ -181,6 +199,22 @@
 			path = ViewRecord;
 			sourceTree = "<group>";
 		};
+		7D2E50192CE4853D00740301 /* VideoManager */ = {
+			isa = PBXGroup;
+			children = (
+				7D2E50202CE4892C00740301 /* black.mov */,
+				7D2E501D2CE4892B00740301 /* landscape.MOV */,
+				7D2E501F2CE4892B00740301 /* movie1.mov */,
+				7D2E501C2CE4892B00740301 /* movie2.mov */,
+				7D2E50212CE4892C00740301 /* portrait.MOV */,
+				7D2E501E2CE4892B00740301 /* sample.mp3 */,
+				7D2E50222CE4892C00740301 /* silence.mp3 */,
+				7D2E50172CE4853D00740301 /* KVExtensions.swift */,
+				7D2E50182CE4853D00740301 /* KVVideoManager.swift */,
+			);
+			path = VideoManager;
+			sourceTree = "<group>";
+		};
 		7D4FD30A2CE1B5BF000A2589 /* SettingRecord */ = {
 			isa = PBXGroup;
 			children = (
@@ -220,6 +254,7 @@
 		7DAC5CAE2C2D007B00E36C1A /* rankingFilter */ = {
 			isa = PBXGroup;
 			children = (
+				7D2E50192CE4853D00740301 /* VideoManager */,
 				7D2CB3AB2CDDC0A70084C35D /* Componend */,
 				7DAC5CE22C2D032D00E36C1A /* Model */,
 				7DAC5CD72C2D02F100E36C1A /* API */,
@@ -418,15 +453,22 @@
 				7DAC5CB92C2D007C00E36C1A /* Assets.xcassets in Resources */,
 				7D1FBBE62CCF77230087329D /* GoogleService-Info.plist in Resources */,
 				7DAC5CBC2C2D007C00E36C1A /* Base in Resources */,
+				7D2E50282CE4892C00740301 /* portrait.MOV in Resources */,
 				7D1FBBDF2CCF75F70087329D /* onboardVC.xib in Resources */,
 				7DAC5CF72C2D054D00E36C1A /* IAPViewController.xib in Resources */,
 				7DAC5CCD2C2D02BA00E36C1A /* PrivacyPolicyViewController.xib in Resources */,
+				7D2E50292CE4892C00740301 /* silence.mp3 in Resources */,
+				7D2E50232CE4892C00740301 /* movie2.mov in Resources */,
 				7DAC5CCF2C2D02BA00E36C1A /* TeamOfUse.xib in Resources */,
 				7D2CB3C02CDDEF1A0084C35D /* CameraView.xib in Resources */,
 				7D1FBBE32CCF76690087329D /* ViewHome.xib in Resources */,
 				7D2CB3B52CDDC7F40084C35D /* ViewRecord.xib in Resources */,
+				7D2E50262CE4892C00740301 /* movie1.mov in Resources */,
 				7D4FD30E2CE1B5E9000A2589 /* SettingRecord.xib in Resources */,
+				7D2E50242CE4892C00740301 /* landscape.MOV in Resources */,
 				7D4FD3132CE1F02D000A2589 /* faceView.xib in Resources */,
+				7D2E50272CE4892C00740301 /* black.mov in Resources */,
+				7D2E50252CE4892C00740301 /* sample.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,6 +544,7 @@
 				7D4FD3112CE1EFC2000A2589 /* faceView.swift in Sources */,
 				7DAC5CDC2C2D02F100E36C1A /* RestAPIManager.swift in Sources */,
 				7DAC5CCC2C2D02BA00E36C1A /* PrivacyPolicyViewController.swift in Sources */,
+				7D2E501B2CE4853D00740301 /* KVVideoManager.swift in Sources */,
 				7D2CB3B42CDDC7F40084C35D /* ViewRecord.swift in Sources */,
 				7DAC5CB02C2D007B00E36C1A /* AppDelegate.swift in Sources */,
 				7DAC5CE42C2D032D00E36C1A /* RealmManager_pictureLike.swift in Sources */,
@@ -510,6 +553,7 @@
 				7DAC5CEE2C2D03A400E36C1A /* TabbarViewController.swift in Sources */,
 				7DAC5CED2C2D03A400E36C1A /* BaseNavigationController.swift in Sources */,
 				7D4FD3092CE1AFFA000A2589 /* ViewRecord + func.swift in Sources */,
+				7D2E501A2CE4853D00740301 /* KVExtensions.swift in Sources */,
 				7DAC5CE32C2D032D00E36C1A /* PictureLike_Realm.swift in Sources */,
 				7DE71BC42CE357E6001B19F0 /* Recoder.swift in Sources */,
 				7D2CB3B72CDDCA240084C35D /* ViewRecord + setup.swift in Sources */,
